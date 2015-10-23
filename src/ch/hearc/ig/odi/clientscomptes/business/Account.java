@@ -11,40 +11,40 @@ package ch.hearc.ig.odi.clientscomptes.business;
  */
 public class Account {
 
-    private Integer number;
+    private String number;
     private String name;
-    private Float balance;
-    private Float rate;
+    private Double balance;
+    private Double rate;
     private Customer customer;
 
-    public Account(Customer customer) {
-        this.customer = customer;
+    public Account(Customer pcustomer) {
+        this.customer = pcustomer;
     }
 
-    public Account(Integer number, String name, Float balance, Float rate, Customer customer) {
-        this.number = number;
-        this.name = name;
-        this.balance = balance;
-        this.rate = rate;
-        this.customer = customer;
+    public Account(String pnumber, String pname, Double pbalance, Double prate, Customer pcustomer) {
+        this.number = pnumber;
+        this.name = pname;
+        this.balance = pbalance;
+        this.rate = prate;
+        this.customer = pcustomer;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
         
 
-    public void credit(Float amount) {
-        this.balance += amount;
+    public void credit(Double pamount) {
+        this.balance += pamount;
     }
 
-    public void debit(Float amount) {
-        this.balance -= amount;
+    public void debit(Double pamount) {
+        this.balance -= pamount;
     }
 
-    public static void transfert(Float amount, Account source, Account target) {
-        source.debit(amount);
-        target.credit(amount);
+    public static void transfert(Double pamount, Account psource, Account ptarget) {
+        psource.debit(pamount);
+        ptarget.credit(pamount);
     }
 
 }

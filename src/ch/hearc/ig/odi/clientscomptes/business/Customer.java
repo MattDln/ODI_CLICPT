@@ -52,12 +52,7 @@ public class Customer {
         return accounts.get(number);
     }
 
-    public void createAccount() {
-        Account account = new Account(this);
-        accounts.add(account);
-    }
-
-    public void createAccount(Integer number, String name, Float balance, Float rate) {
+    public void addAccount (String number, String name, Double balance, Double rate) {
         Account account = new Account(number, name, balance, rate, this);
         boolean isPresent = false;
         for (Account acc : accounts) {
