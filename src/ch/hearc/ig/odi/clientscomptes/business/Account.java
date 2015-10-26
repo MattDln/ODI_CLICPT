@@ -13,8 +13,8 @@ public class Account {
 
     private String number;
     private String name;
-    private Double balance;
-    private Double rate;
+    private double balance = 0;
+    private double rate = 0.001;
     private Customer customer;
 
     public Account(Customer pcustomer) {

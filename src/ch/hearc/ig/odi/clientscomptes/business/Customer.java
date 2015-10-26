@@ -48,11 +48,22 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    /* Easy mode
+     public Account getAccountByNumber(Integer number) {
+     return accounts.get(number);
+     }*/
+    
     public Account getAccountByNumber(Integer number) {
-        return accounts.get(number);
+        Account accToReturn = null;
+        for (Account currentAcc : accounts) {
+            if (currentAcc.getNumber().equals(number)) {
+                accToReturn = currentAcc;
+            }
+        }
+        return accToReturn;
     }
 
-    public void addAccount (String number, String name, Double balance, Double rate) {
+    public void addAccount(String number, String name, Double balance, Double rate) {
         Account account = new Account(number, name, balance, rate, this);
         boolean isPresent = false;
         for (Account acc : accounts) {
@@ -66,4 +77,3 @@ public class Customer {
     }
 
 }
-
